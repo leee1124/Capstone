@@ -20,7 +20,7 @@
                         </colgroup>
                         <tbody>
                             <tr><th>ID</th>
-                                <td> <input type="text" name="id" maxlength="50" disabled></td>
+                                <td> <input type="text" name="idusers" maxlength="50" disabled></td>
                                 <td> *ID는 사번으로 자동 배정됩니다.</td>
                             </tr>
         
@@ -33,15 +33,15 @@
         
                             <tr>
                                 <th>*이름</th>
-                                <td><input type="text" size="20" placeholder="User Name" required disabled></td>
+                                <td><input type="text" size="20" placeholder="name" required disabled></td>
                                 <th>전화번호</th>
-                                <td><input type="tel" placeholder="010-1234-5678"></td>
+                                <td><input type="tele" placeholder="010-1234-5678"></td>
                             </tr>
                             <tr>
                                 <th>부서</th>
                                 <td>
-                                    <select name="department">
-                                    <datalist id="department">
+                                    <select name="Dept">
+                                    <datalist id="Dept">
                                         <option value="1" selected disabled>CCTV 사용부</option>
                                         <option value="2" disabled>CCTV 관리부</option>
                                         <option value="3" disabled>데이터베이스 관리부</option>
@@ -50,8 +50,8 @@
                                 
                                 <th>직책</th>
                                     <td>
-                                        <select name="position">
-                                        <datalist id="position" >
+                                        <select name="ranking">
+                                        <datalist id="ranking" >
                                             <option value="1" selected disabled>부서장</option>
                                             <option value="2" disabled>부서원 </option>
                                         </datalist>
@@ -59,10 +59,7 @@
                                 </tr> 
                                 <tr>
                                     <th>생일</th>
-                                    <td><input type="date" id='currentDate' required disabled></td>
-                                    <th>권한</th>
-                                    <td><input type="radio" name="authority" value="0"disabled>관리자
-                                    <input type="radio" name="authority" value="1" checked disabled>사용자</td>
+                                    <td><input type="birth" id='currentDate' required disabled></td>
                   
                                 </tr>
                                 <td><input type="submit" value="확인"><input type="reset" value="초기화"><input type="button" value="취소" onclick="location.href='/?id=admin'"></td>

@@ -14,7 +14,7 @@
     </head>
     <body onload="time()">
         <%- include("./partials/adminHeader.ejs") %>
-        <img id="image" width="640" height="480">
+        <img id="image"  width="1080" height="720">
             <script src="/socket.io/socket.io.js"></script>
             <script>
                 const socket = io.connect('http://localhost:8001/', { transports: ['websocket'] });

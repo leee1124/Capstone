@@ -9,22 +9,18 @@ module.exports=class User extends Sequelize.Model{
                 primaryKey: true
             },
             password:{
-                type:Sequelize.STRING(20),
+                type:Sequelize.STRING(300),
                 allowNull:false
             },
             name:{
                 type:Sequelize.STRING(10),
                 allowNull:false
             },
-            usertype:{
-                type:Sequelize.BOOLEAN,
-                allowNull:false
-            },
             Dept:{
                 type:Sequelize.STRING(10),
                 allowNull:false
             },
-            rank:{
+            ranking:{
                 type:Sequelize.STRING(10),
                 allowNull:false
             },
@@ -33,10 +29,10 @@ module.exports=class User extends Sequelize.Model{
                 allowNull:false
             },
             
-            birth:{
-                type:Sequelize.DATE,
-                allowNull:false
-            },
+            // birth:{
+            //     type:Sequelize.DATE,
+            //     allowNull:true
+            // },
             addr:{
                 type:Sequelize.STRING(45),
                 allowNull:false

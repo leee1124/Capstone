@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <title>CCTV Service</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+    <body>
+        <%- include("./partials/adminHeader.ejs") %>
+        <div id ="table_layout">
+            <form id="DelUser" action="/auth/DelUser" method="GET">            
+                <table id="user-list" border="0">
+                <thead>
+                    <tr>
+                        <th>id(사번)</th>
+                        <th>이름</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%  for(let i = 0; i < videos.length; i++) { %>
+                        <tr> 
+                            <td><%= videos[i].idVideo %></td>
+                            <td><%= users[i].name %></td>                  
+                        </tr>
+                    <% } %>
+                    <td><input type="submit" value="삭제"></input></td>
+                    <td><input type="reset" value="초기화"></input></td>
+                    <td><button value="취소" onclick="location.href='/admin'"></button></td>
+                </tbody>
+            </table>
+            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+            </form>
+        </div>
+        <%- include("./partials/footer.ejs") %> 
+    </body>
+</html>
