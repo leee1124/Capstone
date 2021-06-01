@@ -148,8 +148,8 @@ input[type = button]{
 }
 
 #live영상{
-    width:300pt;
-    height:300pt; 
+    width:200pt;
+    height:200pt; 
     top:180px;
     left: 10%;
 
@@ -157,32 +157,32 @@ input[type = button]{
 }
 #과거영상{
     top:180px;
-    width:300pt;
-    height:300pt; 
+    width:200pt;
+    height:200pt; 
     position:absolute;
     left: 40%;
 
 }
 #과거결과{
     top:180px;
-    width:300pt;
-    height:300pt; 
+    width:200pt;
+    height:200pt; 
     position:absolute;
     left: 70%;
 
 }
 #사용자등록{
     top:650px;
-    width:300pt;
-    height:300pt; 
+    width:200pt;
+    height:200pt; 
     position:absolute;
     left: 25%;
 
 }
 #사용자삭제{
     top:650px;
-    width:300pt;
-    height:300pt; 
+    width:200pt;
+    height:200pt; 
     position:absolute;
     left: 55%;
 
@@ -443,13 +443,13 @@ select {
 
 #delBtn {
     top: 70%;
-    left: 32%;
+    left: 31%;
 
     position: absolute;
 }
 #resetBtn {
     top: 70%;
-    left: 52%;
+    left: 53%;
 
     position: absolute;
 }

@@ -149,7 +149,7 @@
         <div>
             <h3 class="join_title"><label for="dept">부서</label></h3>
             <span class="box Dept_code">
-                <select name="inputDept" class="sel">
+                <select name="Dept" class="sel">
                     <option value="1">CCTV 사용자</option>
                     <option value="2">CCTV 관리자</option>
                     <option value="3">데이터베이스 관리자</option>
@@ -161,7 +161,7 @@
         <div>
           <h3 class="join_title"><label for="rank">직책</label></h3>
           <span class="box rank_code">
-              <select name="inputRank" class="sel">
+              <select name="ranking" class="sel">
                   <option value="1">부서장</option>
                   <option value="2">부서원</option>
               </select>                            
@@ -172,7 +172,7 @@
         <div>
             <h3 class="join_title"><label for="phoneNo">휴대전화</label></h3>
             <span class="box int_mobile">
-                <input type="tel" id="mobile" name="inputTele" class="int" maxlength="16"  placeholder="<%= bring[i].tele %>">
+                <input type="tel" id="mobile" name="Tele" class="int" maxlength="16"  placeholder="<%= bring[i].tele %>">
             </span>
             <span class="error_next_box"></span>    
         </div>
@@ -198,7 +198,6 @@
     </div>
     <% } %> 
     <!-- content-->
-        <%- include("./partials/footer.ejs") %> 
     </body>
 </form>
 </html>

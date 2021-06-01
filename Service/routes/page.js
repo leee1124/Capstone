@@ -2,6 +2,7 @@ const express = require('express');
 const {isLoggedIn,isNotLoggedIn}=require('./middlewares');
 const mysql=require("mysql2");
 const User = require('../models/user');
+const bcrypt = require('bcrypt');
 
 var connection = mysql.createConnection({
     host     : 'localhost',
@@ -19,10 +20,75 @@ router.use((req, res, next)=>{
 
 
 
-router.get('/userProfile',isLoggedIn,(req, res)=>{
-    if(req.session.login)
-    res.render('userProfile');
+// router.get('/userProfile',isLoggedIn,(req, res)=>{
+//     if(req.session.login)
+//     res.render('userProfile');
+// });
+
+
+//
+
+router.get('/userProfile',isLoggedIn,(req,res)=>{
+    console.log(req.user.idusers);
+    const id=req.user.idusers;
+   
+    console.log(id);
+    connection.query('SELECT * FROM users WHERE idusers=?',[id], function(err, result) {
+        if(err){
+            console.error(err);
+            throw err;
+        } else {
+            res.render('userProfile', {bring: result});                
+        }
+    });
 });
+router.post('/userProfile',isLoggedIn,function(req,res,next){
+    var iduser=req.user.idusers;
+    var addr=req.user.addr;
+    //var password = req.user.password
+    // var Dept=req.body.Dept;
+    // var ranking=req.body.ranking;
+    var tele=req.body.tele;
+
+    // const hash = bcrypt.hash(password, 12);
+    // console.log(hash);
+    // connection.query('UPDATE users SET password=? WHERE idusers=?',
+    // [ hash, iduser ],function(err,result){
+    //     if(err){
+    //         console.log(err);
+    //     }
+    //     else{
+    //         //res.render('adminProfile',{bring:result});
+    //         //res.render('admin');
+      
+    //     }
+    // });
+    
+    connection.query('UPDATE users SET tele=? WHERE idusers=?',
+    [ tele, iduser ],function(err,result){
+        if(err){
+            console.log(err);
+        }
+        else{
+            //res.render('adminProfile',{bring:result});
+            //res.render('admin');
+        }
+    });
+    connection.query('UPDATE users SET addr=? WHERE idusers=?',
+    [ addr, iduser ],function(err,result){
+        if(err){
+            console.log(err);
+        }
+        else{
+             
+           // res.render('adminProfile',{bring:result});
+           //res.render('admin');
+        }
+    });
+    res.render('umain');
+});
+
+//
 
 router.get('/adminProfile',isLoggedIn,(req,res)=>{
     console.log(req.user.idusers);
@@ -38,10 +104,12 @@ router.get('/adminProfile',isLoggedIn,(req,res)=>{
     });
 });
 router.post('/adminProfile',isLoggedIn,function(req,res,next){
+    //var password = req.body.password;
     var iduser=req.user.idusers;
     var Dept=req.body.Dept;
     var ranking=req.body.ranking;
     var tele=req.body.tele;
+    
     connection.query('UPDATE users SET tele=? WHERE idusers=?',
     [ tele, iduser ],function(err,result){
         if(err){
@@ -91,6 +159,7 @@ router.get('/admin', isLoggedIn, (req,res)=>{
 router.get('/umain', isLoggedIn, (req,res)=>{
     res.render('umain');
 });
+
 
 router.get('/DelUser',isNotLoggedIn,(req,res)=>{
     // res.render('DelUser');
