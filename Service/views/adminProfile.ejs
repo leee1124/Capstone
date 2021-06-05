@@ -7,59 +7,6 @@
   </head>
     <body>
         <%- include("./partials/adminHeader.ejs") %>
-        <!-- <form id="register" action="/adminProfile" name ="fo" method="POST">
-            <fieldset>
-                <legend> 사용자  정보 수정 </legend>
-                <div class ="table_layout">
-                    <table border="0">
-                        <colgroup>
-                            <col width="25%"/>
-                            <col width="25%"/>
-                            <col width="25%"/>
-                            <col width="25%"/>
-                        </colgroup>
-                        <tbody>
-                            <%  for(let i = 0; i < bring.length; i++) { %>
-                            <tr><th>ID</th>
-                                <td><%= bring[i].idusers %></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>*이름</th>
-                                <td> <input type="text" size="20" placeholder="<%= bring[i].name %>" required disabled></td>
-                                <th>전화번호</th>
-                                <td> <input type="tel" name="tele" placeholder="<%= bring[i].tele %>"></td>
-                            </tr>
-                            <tr>
-                                <th>부서</th>
-                                <td>
-                                    <select name="Dept">
-                                    <datalist id="Dept">
-                                        <option value="1" >CCTV 사용자</option>
-                                        <option value="2" >CCTV 관리자</option>
-                                        <option value="3" >데이터베이스 관리자</option>
-                                    </datalist>
-                                </td>
-                                <th>직책</th>
-                                <td>
-                                    <select name="ranking">
-                                    <datalist id="ranking">
-                                        <option value="1" >부서장</option>
-                                        <option value="2" >부서원</option>
-                                    </datalist>
-                                </td>
-                            </tr> 
-                                <tr>
-                                    <th>생일</th>
-                                    <td><input type="text" id='birth' placeholder="<%= bring[i].birth%>" required disabled></td>
-                                </tr>
-                                <td><input type="submit" value="확인"><input type="reset" value="초기화"><input type="button" value="취소" ></td>
-                                <% } %>
-                        </tbody>
-                    </table>
-                </div>
-            </fieldset> -->
-        
         <form action="/adminProfile" name ="fo" method="POST">
             <!-- content--> 
             <div class="content">
@@ -149,7 +96,7 @@
         <div>
             <h3 class="join_title"><label for="dept">부서</label></h3>
             <span class="box Dept_code">
-                <select name="Dept" class="sel">
+                <select name="inputDept" class="sel">
                     <option value="1">CCTV 사용자</option>
                     <option value="2">CCTV 관리자</option>
                     <option value="3">데이터베이스 관리자</option>
@@ -161,7 +108,7 @@
         <div>
           <h3 class="join_title"><label for="rank">직책</label></h3>
           <span class="box rank_code">
-              <select name="ranking" class="sel">
+              <select name="inputRank" class="sel">
                   <option value="1">부서장</option>
                   <option value="2">부서원</option>
               </select>                            
@@ -172,7 +119,7 @@
         <div>
             <h3 class="join_title"><label for="phoneNo">휴대전화</label></h3>
             <span class="box int_mobile">
-                <input type="tel" id="mobile" name="Tele" class="int" maxlength="16"  placeholder="<%= bring[i].tele %>">
+                <input type="tel" id="mobile" name="inputTele" class="int" maxlength="16"  placeholder="<%= bring[i].tele %>">
             </span>
             <span class="error_next_box"></span>    
         </div>

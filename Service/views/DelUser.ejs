@@ -4,6 +4,7 @@
     <title>CCTV Service</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/style.css">
+   
   </head>
     <body>
         <%- include("./partials/adminHeader.ejs") %>
@@ -33,18 +34,12 @@
                             <td><%= users[i].tele %></td>
                             <td><%= users[i].birth %></td>
                             <td><%= users[i].addr %></td>    
-
                         </tr>
-                        <% } %>             
-                </tbody>             
+                        <% } %>              
+                </tbody>
             </table>
-            <br>
-            <input class="btnJoin" id="delBtn" type="submit" value="삭제"></input>
-            <br>
-            <br>
-            <br>
-          
-            <input class="btnJoin" id="resetBtn" type="reset" value="초기화"></input>
+            <tr><input class="btnJoin" id="delBtn" type="submit" value="삭제"></input></tr>
+            <tr><input class="btnJoin" id="resetBtn" type="reset" value="초기화"></input></tr> 
             <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
             </form>
     </body>

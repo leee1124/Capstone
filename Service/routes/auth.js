@@ -17,7 +17,7 @@ var connection = mysql.createConnection({
 
 const router = express.Router();
 
-router.post('/register', isNotLoggedIn, async(req, res, next) =>{
+router.post('/register', isLoggedIn, async(req, res, next) =>{
     const  password = req.body.inputPassword;
     try{
         const exUser = await User.findOne({where: { tele: req.body.inputTele } });
@@ -34,7 +34,7 @@ router.post('/register', isNotLoggedIn, async(req, res, next) =>{
         // birth: req.body.inputBirth,
         addr: req.body.inputAddr,
       });
-      return res.redirect('/');
+      return res.redirect('/admin');
     } catch (err) {
       console.error(err);
       next(err);
@@ -76,25 +76,7 @@ router.post('/logout', isLoggedIn, (req,res)=>{
 });
 //로그아웃 라우터
 
-
-/*
-router.post('/adminProfile',isLoggedIn,function(req,res,next){
-    var idusers=req.user.idusers;
-    console.log(idusers);
-    var password=req.body.password;
-    var Dept=req.body.Dept;
-    var rank=req.body.rank;
-    var tele=req.body.tele;
-    connection.query('UPDATE users SET , Dept=?, rank=?, tele=? WHERE idusers=?',
-    [ Dept, rank, tele, idusers],function(err,rows,fields){
-        if(err){
-            console.log(err);
-        }
-    });
-    res.render("/adminProfile");
-});*/
-
-router.post('/DelUser',isNotLoggedIn,function(req,res,next){
+router.post('/DelUser',isLoggedIn,function(req,res,next){
     var deluser=req.body.idusers;
     console.log(deluser);
     connection.query('DELETE FROM users WHERE idusers=?',[deluser], function(err, result){

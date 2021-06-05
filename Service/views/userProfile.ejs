@@ -7,69 +7,7 @@
   </head>
     <body>
         <%- include("./partials/adminHeader.ejs") %>
-        <!-- <form id="register" name ="fo" method="get">
-            <fieldset>
-                <legend> 사용자  정보 수정 </legend>
-                <div class ="table_layout">
-                    <table border="0">
-                        <colgroup>
-                            <col width="25%"/>
-                            <col width="25%"/>
-                            <col width="25%"/>
-                            <col width="25%"/>
-                        </colgroup>
-                        <tbody>
-                            <tr><th>ID</th>
-                                <td> <input type="text" name="idusers" maxlength="50" disabled></td>
-                                <td> *ID는 사번으로 자동 배정됩니다.</td>
-                            </tr>
         
-                            <tr>
-                                <th>*비밀번호</th> 
-                                <td><input type="password" size="20" placeholder="password" required></td>
-                                <th>*비밀번호 확인</th>
-                                <td><input type="password"placeholder="password" required></td>
-                            </tr>
-        
-                            <tr>
-                                <th>*이름</th>
-                                <td><input type="text" size="20" placeholder="name" required disabled></td>
-                                <th>전화번호</th>
-                                <td><input type="tele" placeholder="010-1234-5678"></td>
-                            </tr>
-                            <tr>
-                                <th>부서</th>
-                                <td>
-                                    <select name="Dept">
-                                    <datalist id="Dept">
-                                        <option value="1" selected disabled>CCTV 사용부</option>
-                                        <option value="2" disabled>CCTV 관리부</option>
-                                        <option value="3" disabled>데이터베이스 관리부</option>
-                                    </datalist>
-                                </td>
-                                
-                                <th>직책</th>
-                                    <td>
-                                        <select name="ranking">
-                                        <datalist id="ranking" >
-                                            <option value="1" selected disabled>부서장</option>
-                                            <option value="2" disabled>부서원 </option>
-                                        </datalist>
-                                    </td>
-                                </tr> 
-                                <tr>
-                                    <th>생일</th>
-                                    <td><input type="birth" id='currentDate' required disabled></td>
-                  
-                                </tr>
-                                <td><input type="submit" value="확인"><input type="reset" value="초기화"><input type="button" value="취소" onclick="location.href='/?id=admin'"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </fieldset>
-        </form> -->
-
         <form action="/userProfile" name ="fo" method="POST">
             <!-- content--> 
             <div class="content">
@@ -83,7 +21,6 @@
                         <input type="text" id="id" name="idusers" class="int" maxlength="20" disabled value="<%= bring[i].idusers %>">
                     </span>
                 </div>
-
             <!-- PW1 -->
                 <div>
                     <h3 class="join_title"><label for="pswd1">비밀번호</label></h3>
@@ -93,7 +30,6 @@
                         <img src="../images/m_icon_pass.png" id="pswd1_img1" class="pswdImg">
                     </span>
                 </div>
-
             <!-- PW2 -->
                 <div>
                     <h3 class="join_title"><label for="pswd2">비밀번호 재확인</label></h3>
@@ -102,7 +38,6 @@
                         <img src="../images/m_icon_check_disable.png" id="pswd2_img1" class="pswdImg">
                     </span>
                 </div>
-
         <!-- NAME -->
             <div>
                 <h3 class="join_title"><label for="name" >이름</label></h3>
@@ -110,11 +45,9 @@
                     <input type="text" name="name" id="name" class="int" maxlength="20" value="<%= bring[i].name %>" required disabled>
                 </span>
             </div>
-
         <!-- BIRTH -->
             <div>
                 <h3 class="join_title"><label for="yy">생년월일</label></h3>
-
                 <div id="bir_wrap">
                 <!-- BIRTH_YY -->
                     <div id="bir_yy">
@@ -122,7 +55,6 @@
                             <input type="text" id="yy" class="int" maxlength="4" placeholder="년(4자)" disabled> 
                         </span> 
                     </div>
-
                 <!-- BIRTH_MM -->
                     <div id="bir_mm">
                         <span class="box">
@@ -143,18 +75,15 @@
                             </select>
                         </span>
                     </div>
-
                 <!-- BIRTH_DD -->
                 <div id="bir_dd">
                     <span class="box">
                         <input type="text" id="dd" class="int" maxlength="2" placeholder="일" disabled>
                     </span>
                 </div>
-
             </div>
             <span class="error_next_box"></span>    
         </div>
-
         <!-- Dept -->
         <div>
             <h3 class="join_title"><label for="dept">부서</label></h3>
@@ -168,7 +97,6 @@
                 </select>                            
             </span>
         </div>
-
         <!-- Position -->
         <div>
           <h3 class="join_title"><label for="rank">직책</label></h3>
@@ -180,7 +108,6 @@
               </select>                            
           </span>
         </div>
-
         <!-- MOBILE -->
         <div>
             <h3 class="join_title"><label for="phoneNo">휴대전화</label></h3>
@@ -197,15 +124,12 @@
           </span>
    
         </div>
-
-
         <!-- JOIN BTN-->
         <div class="btn_area">
             <button type="submit" class="btnJoin">
                 <span>수정하기</span>
             </button>
         </div>
-
         
       </form>
     </div>

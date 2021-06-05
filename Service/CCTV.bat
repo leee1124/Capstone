@@ -1,1 +1,1 @@
-python ./aimodel/CCTV.py
+python ./aimodel/CCTVStreamer.py
